@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface TransactionsApi {
 
+    //todo document with openapi
+
     @GetMapping()
     List<Long> getLastTransactions(LocalDateTime filterDate);
 }
