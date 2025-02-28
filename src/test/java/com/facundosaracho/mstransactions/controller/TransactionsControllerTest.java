@@ -12,7 +12,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.logging.Logger;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
@@ -22,9 +21,6 @@ class TransactionsControllerTest {
 
     @InjectMocks
     private TransactionsController transactionsController;
-
-    @Mock
-    private Logger logger;
 
     @Mock
     private TransactionsService transactionsService;

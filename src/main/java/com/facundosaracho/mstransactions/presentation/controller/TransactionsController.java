@@ -24,7 +24,7 @@ public class TransactionsController implements TransactionsApi {
     @Override
     @GetMapping()
     public List<Long> getLastTransactions(@RequestParam(value = "filter_date", required = false) LocalDateTime filterDate) {
-        log.info("<<< Starting to get las transactions filtered by date >>>>>");
+        log.info("<<< Starting to get las transactions filtered by date and getting companyId >>>>>");
         List<Long> companiesIds = transactionsService.getLastTransactions(filterDate)
                 .stream()
                 .toList();
