@@ -20,10 +20,7 @@ public class TransactionsServiceImpl implements TransactionsService {
     @Override
     public List<Long> getLastTransactions(LocalDateTime filterDate) {
 
-        List<Long> companiesIds = transactionsRepository.findByTransactionDateGreaterThanEqual(filterDate)
-                .stream()
-                .map(TransactionEntity::getCompanyId)
-                .toList();
+        List<Long> companiesIds = transactionsRepository.findCompanyIdByTransactionDateGreaterThanEqual(filterDate);
 
         if (companiesIds.isEmpty()) log.warn("No transactions were found for filter date: {}", filterDate);
 

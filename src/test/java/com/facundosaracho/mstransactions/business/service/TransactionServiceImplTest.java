@@ -9,7 +9,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.boot.test.system.CapturedOutput;
 import org.springframework.boot.test.system.OutputCaptureExtension;
 
 import java.math.BigDecimal;
@@ -42,7 +41,7 @@ class TransactionServiceImplTest {
         MockitoAnnotations.openMocks(this);
         LocalDateTime filterDate = LocalDateTime.now();
 
-        when(transactionsRepository.findByTransactionDateGreaterThanEqual(any(LocalDateTime.class))).thenReturn(mockResponse);
+        when(transactionsRepository.findCompanyIdByTransactionDateGreaterThanEqual(any(LocalDateTime.class))).thenReturn(mockResponse);
 
         List<Long> companiesIds = transactionsService.getLastTransactions(filterDate);
 

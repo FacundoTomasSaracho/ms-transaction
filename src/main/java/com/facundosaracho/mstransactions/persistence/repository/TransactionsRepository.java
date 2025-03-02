@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface TransactionsRepository extends JpaRepository<TransactionEntity, Long> {
 
-    List<TransactionEntity> findByTransactionDateGreaterThanEqual(LocalDateTime transactionDate);
+    List<Long> findCompanyIdByTransactionDateGreaterThanEqual(LocalDateTime transactionDate);
 }
